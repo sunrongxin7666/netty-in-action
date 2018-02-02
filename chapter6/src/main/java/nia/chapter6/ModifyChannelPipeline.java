@@ -18,6 +18,7 @@ public class ModifyChannelPipeline {
      * */
     public static void modifyPipeline() {
         ChannelPipeline pipeline = CHANNEL_PIPELINE_FROM_SOMEWHERE; // get reference to pipeline;
+
         FirstHandler firstHandler = new FirstHandler();
         pipeline.addLast("handler1", firstHandler);
         pipeline.addFirst("handler2", new SecondHandler());

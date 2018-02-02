@@ -16,6 +16,7 @@ public class DiscardHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         //释放资源
+        //计数引用
         ReferenceCountUtil.release(msg);
     }
 

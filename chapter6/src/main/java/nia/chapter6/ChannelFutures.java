@@ -24,6 +24,7 @@ public class ChannelFutures {
         Channel channel = CHANNEL_FROM_SOMEWHERE; // get reference to pipeline;
         ByteBuf someMessage = SOME_MSG_FROM_SOMEWHERE; // get reference to pipeline;
         //...
+        //写操作返回ChannelFuture
         io.netty.channel.ChannelFuture future = channel.write(someMessage);
         future.addListener(new ChannelFutureListener() {
             @Override

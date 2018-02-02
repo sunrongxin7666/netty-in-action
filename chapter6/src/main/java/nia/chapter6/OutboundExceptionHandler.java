@@ -11,6 +11,7 @@ public class OutboundExceptionHandler extends ChannelOutboundHandlerAdapter {
     @Override
     public void write(ChannelHandlerContext ctx, Object msg,
         ChannelPromise promise) {
+        //利用传入的ChannelPromise
         promise.addListener(new ChannelFutureListener() {
             @Override
             public void operationComplete(ChannelFuture f) {

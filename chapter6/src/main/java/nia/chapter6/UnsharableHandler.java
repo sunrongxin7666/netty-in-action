@@ -14,7 +14,7 @@ public class UnsharableHandler extends ChannelInboundHandlerAdapter {
     private int count;
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
-        count++;
+        count++;//多管道共享，却有状态依赖，非多线程安全的
         System.out.println("inboundBufferUpdated(...) called the "
                 + count + " time");
         ctx.fireChannelRead(msg);

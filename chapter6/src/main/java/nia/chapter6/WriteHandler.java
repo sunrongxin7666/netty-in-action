@@ -12,6 +12,8 @@ import io.netty.channel.ChannelHandlerContext;
 public class WriteHandler extends ChannelHandlerAdapter {
     private ChannelHandlerContext ctx;
     @Override
+
+    //将上下文保存，在合适的时机使用
     public void handlerAdded(ChannelHandlerContext ctx) {
         this.ctx = ctx;
     }
